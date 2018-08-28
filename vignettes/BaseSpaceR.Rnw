@@ -131,16 +131,18 @@ If you have already installed Bioconductor packages on your system then you can 
 the two lines below.
 
 <<eval = FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite()
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install()
 @ 
 
 Once the core Bioconductor packages are installed, we can install the 
 {\tt BaseSpaceR} package by:
 
 <<eval = FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite("BaseSpaceR")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("BaseSpaceR")
 @ 
 
 To use the package we load it using the {\tt library()} function.
